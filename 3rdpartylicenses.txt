@@ -152,6 +152,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 ngx-colours
 MIT
 
+ngx-webstorage
+MIT
+
 rxjs
 Apache-2.0
                                Apache License
