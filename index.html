@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
   <title>Canopy.</title>
 
-  <link rel="stylesheet"
-    href="/canopy-stencil/canopy-stencil-web.css" />
-  <script type="module"
-    src="/canopy-stencil/canopy-stencil-web.esm.js"></script>
+  <link rel="stylesheet" href="/canopy-stencil/canopy-stencil-web.css" />
+  <script type="module" src="/canopy-stencil/canopy-stencil-web.esm.js"></script>
   <style>
     html.blue {
       --cpy-bg-primary-rgb: 8, 145, 178;
@@ -89,13 +87,6 @@
       <div style="text-align: center; margin-bottom: 24px;">
         <div style="font-size: 1.2rem;">Canopy</div>
         <div style="font-size: 0.875rem; color: var(--cpy-text-light);">Lets you focus on the next big thing.</div>
-        <br />
-        <span style="color: var(--cpy-text-primary)">Colour Palette:</span> <select id="palette-picker"
-          style="color: black;">
-          <option value="purple">Purple</option>
-          <option value="blue">Blue</option>
-          <option value="lime">Lime</option>
-        </select>
       </div>
       <cpy-nav-menu></cpy-nav-menu>
       <div style="margin-top: 32px; text-align: center; font-size: 0.875rem; color: var(--cpy-text-light);">
@@ -113,19 +104,32 @@
           style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.2rem; font-weight: 500; text-align: center;">
           Canopy
         </div>
-        <cpy-button id="darkModeButton" icon type="basic" onclick="onDarkModeClick()">
-        </cpy-button>
         <cpy-popup>
           <cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
 
-          <div slot="content" style="width: 250px; padding: 12px; text-align: left;">
-            <div style="display: flex; gap: 4px; align-items: center;">
+          <div slot="content"
+            style="width: 250px; text-align: left; border-radius: 0.25rem; overflow: hidden; font-size: 0.875rem;">
+            <div style="display: flex; gap: 4px; align-items: center; padding: 12px;">
               <div style="flex: 1;">
                 <p style="font-weight: 500">Alex Rayner</p>
                 <p>Developer</p>
               </div>
               <div>
                 <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="40">
+              </div>
+            </div>
+            <div
+              style="background-color: var(--cpy-bg-primary); padding: 12px; color: white; display: flex; align-items: center; justify-content: space-between;">
+              <label style="display: flex; align-items: center; gap: 0.25rem; cursor: pointer;">
+                <input id="darkModeCheckbox" type="checkbox" style="height: 1rem; width: 1rem;" />
+                Dark Mode
+              </label>
+              <div>
+                Palette: <select id="palette-picker" style="color: black;">
+                  <option value="purple">Purple</option>
+                  <option value="blue">Blue</option>
+                  <option value="lime">Lime</option>
+                </select>
               </div>
             </div>
           </div>
@@ -144,24 +148,22 @@
     document.querySelector("html").classList.toggle(currentPalette);
     const drawerElement = document.querySelector('cpy-drawer-container');
     drawerElement.opened = window.matchMedia('(min-width: 640px)').matches;
-    const darkModeButton = document.getElementById('darkModeButton');
+    const darkModeCheckbox = document.getElementById('darkModeCheckbox');
     const paletteElement = document.getElementById('palette-picker');
     paletteElement.addEventListener('change', () => {
       document.querySelector("html").classList.toggle(currentPalette);
       document.querySelector("html").classList.add(paletteElement.value);
       currentPalette = paletteElement.value;
     });
-    darkModeButton.innerHTML = '<cpy-icon style="color: white">light_mode</cpy-icon>';
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
     const onDarkModeClick = () => {
       darkMode = !darkMode;
+      darkModeCheckbox.checked = darkMode;
       document.querySelector("html").classList.toggle("dark");
-      darkModeButton.innerHTML = darkMode
-        ? '<cpy-icon style="color: white">dark_mode</cpy-icon>'
-        : '<cpy-icon style="color: white">light_mode</cpy-icon>';
     };
+    darkModeCheckbox.addEventListener('change', onDarkModeClick);
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.querySelector("html").classList.add("dark");
+      onDarkModeClick();
     }
   </script>
 </body>
