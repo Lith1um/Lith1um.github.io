@@ -142,7 +142,7 @@ const navigate = (url) => {
 }
 
 // adds an event listener for all internal links
-document.documentElement.addEventListener('click', e => {
+window.addEventListener('click', e => {
   // since some elements are in the shadow root, we can make use of the path on the event to get the anchor
   for (let i = 0; i < e.path.length - 1; i++) {
     const elemPath = e.path[i];
