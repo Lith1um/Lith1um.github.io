@@ -22,9 +22,10 @@ const menuItems = navMenuElement.items = [
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
     { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
       { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
-      { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
+      { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav }
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
+      { title: 'Dialog', type: 'basic', url: '/comps/dialog', function: closeMenuOnMobileNav },
       { title: 'Popup', type: 'basic', url: '/comps/popup', function: closeMenuOnMobileNav },
       { title: 'Toast', type: 'basic', url: '/comps/toast', function: closeMenuOnMobileNav },
       { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', function: closeMenuOnMobileNav },
