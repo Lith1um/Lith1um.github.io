@@ -107,9 +107,10 @@ const navigate = (url) => {
 
 // adds an event listener for all internal links
 window.addEventListener('click', e => {
+  const composedPath = e.composedPath();
   // since some elements are in the shadow root, we can make use of the path on the event to get the anchor
-  for (let i = 0; i < e.path.length - 1; i++) {
-    const elemPath = e.path[i];
+  for (let i = 0; i < composedPath.length - 1; i++) {
+    const elemPath = composedPath[i];
     // get tag name
     const tag = elemPath.tagName;
     if (tag === 'A') {
