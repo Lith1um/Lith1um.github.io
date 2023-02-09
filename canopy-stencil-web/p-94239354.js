@@ -1,0 +1,1 @@
+const t=(t,e=300)=>{let o;return function(...i){clearTimeout(o),o=setTimeout((()=>t.apply(this,i)),e)}};export{t as d}
