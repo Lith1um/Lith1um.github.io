@@ -78,10 +78,6 @@
       --cpy-text-secondary: rgb(99, 102, 241);
       /* indigo-500 */
     }
-
-    p {
-      text-align: justify;
-    }
   </style>
 </head>
 
@@ -96,7 +92,7 @@
       </div>
       <cpy-nav-menu></cpy-nav-menu>
       <div style="margin-top: 32px; text-align: center; font-size: 0.875rem; color: var(--cpy-text-light);">
-        <p style="text-align: center;">Alex Rayner ©2022</p>
+        <p style="text-align: center;">Alex Rayner ©2023</p>
         <cpy-link href="https://github.com/Lith1um/Canopy-Stencil" new-tab>Github</cpy-link>
       </div>
     </div>
@@ -140,7 +136,22 @@
         </cpy-popup>
       </cpy-toolbar>
 
-      <div id="router-outlet" style="flex: 1; min-height: 0; width: 100%;"></div>
+      <div style="flex: 1; min-height: 0; width: 100%; overflow-y: auto;">
+        <div id="router-outlet" style="min-height: 100%;"></div>
+
+        <div class="footer">
+          <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="60" style="opacity: 0.75;">
+
+          <div style="flex: 1; font-size: 1.25rem;">
+            Canopy.
+            <div style="font-size: 0.75rem;">
+              Alex Rayner ©2023
+            </div>
+          </div>
+
+          <cpy-link href="https://github.com/Lith1um/Canopy-Stencil" new-tab>Github<cpy-icon>terminal</cpy-icon></cpy-link>
+        </div>
+      </div>
     </div>
   </cpy-drawer-container>
   <script type="module" src="/docs/router.js"></script>
