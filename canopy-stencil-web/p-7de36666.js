@@ -1,0 +1,1 @@
+import{d as e}from"./p-94239354.js";const r=(e,r,s=!0)=>{const n=new IntersectionObserver(((e,n)=>{e.forEach((e=>{e.intersectionRatio>0&&(r(e,n),s&&n.disconnect())}))}));return n.observe(e),n},s=(r,s,n=50)=>{const t=new ResizeObserver(e(((e,r)=>{e.forEach((e=>{s(e,r)}))}),n));return t.observe(r),t};export{s as a,r as o}
