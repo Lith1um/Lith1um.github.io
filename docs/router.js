@@ -65,6 +65,7 @@ const menuItems = navMenuElement.items = [
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
     { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
       { title: 'Carousel', type: 'basic', url: '/comps/carousel' },
+      { title: 'Comment List', type: 'basic', url: '/comps/commentList' },
       { title: 'Drawer Container', type: 'basic', url: '/comps/drawer' },
       { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu' },
       { title: 'Overlay', type: 'basic', url: '/comps/overlay' },
@@ -86,6 +87,7 @@ const menuItems = navMenuElement.items = [
     { title: 'Forms', icon: 'format_list_numbered', type: 'collapsible', description: 'Complete form elements', children: [
       { title: 'Basic Inputs', type: 'basic', url: '/comps/input' },
       { title: 'Select', type: 'basic', url: '/comps/inputSelect' },
+      { title: 'Textarea', type: 'basic', url: '/comps/inputTextarea' },
       { title: 'Toggle', type: 'basic', url: '/comps/toggle' }
     ] },
     { title: 'Generic', icon: 'inventory_2', type: 'collapsible', description: 'Simple UI components', children: [
