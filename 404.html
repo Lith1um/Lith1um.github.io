@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/docs/typography.css" />
   <script type="module" src="/core/core.esm.js"></script>
   <style>
-    html.blue {
+    html.cyan {
       --cpy-bg-primary: rgb(8, 145, 178); /*cyan-600 */
       --cpy-bg-primary-light: rgb(236, 254, 255); /*cyan-50 */
       --cpy-bg-primary-hover: rgb(6, 182, 212); /*cyan-500 */
@@ -24,7 +24,7 @@
       --cpy-text-primary: rgb(14, 116, 144); /* cyan-700 */
       --cpy-text-secondary: rgb(190, 24, 93); /* pink-700 */
     }
-    html.blue.dark {
+    html.cyan.dark {
       --cpy-bg-primary-light: rgb(8, 145, 178); /*cyan-600 */
 
       --cpy-bg-secondary-light: rgb(219, 39, 119); /*pink-600 */
@@ -33,7 +33,7 @@
       --cpy-text-secondary: rgb(236, 72, 153); /* pink-500 */
     }
 
-    html.purple {
+    html.violet {
       --cpy-bg-primary: rgb(124, 58, 237); /* violet-600 */
       --cpy-bg-primary-light: rgb(238, 242, 255);  /* violet-50 */
       --cpy-bg-primary-hover: rgb(139, 92, 246); /* violet-500 */
@@ -45,7 +45,7 @@
       --cpy-text-primary: rgb(109, 40, 217); /* violet-700 */
       --cpy-text-secondary: rgb(194, 65, 12); /* orange-700 */
     }
-    html.purple.dark {
+    html.violet.dark {
       --cpy-bg-primary-light: rgb(124, 58, 237); /* violet-600 */
 
       --cpy-bg-secondary-light: rgb(234, 88, 12); /* orange-600 */
@@ -63,7 +63,9 @@
         style="margin: 40px auto 20px auto;">
       <div style="text-align: center; margin-bottom: 1.5rem;">
         <div style="font-size: 1.2rem;">Canopy</div>
-        <div style="font-size: 0.875rem; color: var(--cpy-text-light);">Elevate your UI to new heights.</div>
+        <div style="font-size: 0.875rem; color: var(--cpy-text-light);">
+          Elevate your UI to new heights.
+        </div>
       </div>
       <cpy-input id="search-input" style="margin-bottom: 1rem; padding: 0 1.25rem;" placeholder="Search the docs" size="small">
         <cpy-icon slot="prefix">search</cpy-icon>
@@ -75,19 +77,19 @@
       <cpy-nav-menu></cpy-nav-menu>
       <div style="margin: 3rem 0 1rem; text-align: center; font-size: 0.875rem; color: var(--cpy-text-light);">
         <p style="text-align: center; margin-bottom: 0.5rem;">Alex Rayner ©2023</p>
-        <cpy-link href="https://github.com/Lith1um/Canopy-Stencil" new-tab>Github<cpy-icon>terminal</cpy-icon></cpy-link>
+        <p style="text-align: center; margin-bottom: 0.5rem;">v0.3.2 - <cpy-link href="https://github.com/Lith1um/Canopy-Stencil" new-tab>Github<cpy-icon>terminal</cpy-icon></cpy-link></p>
       </div>
     </div>
     <div style="display: flex; flex-direction: column; height: 100%; width: 100%;">
       <cpy-toolbar>
-        <cpy-button icon type="basic" onclick="onMenuClick()">
-          <cpy-icon style="color: white">menu</cpy-icon>
+        <cpy-button icon onclick="onMenuClick()">
+          <cpy-icon>menu</cpy-icon>
         </cpy-button>
-        <h3 style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0;">
-          Canopy
-        </h3>
+        <div style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          Canopy <span style="font-size: 0.875rem;">v0.3.2</span>
+        </div>
         <cpy-popup>
-          <cpy-button icon type="basic">
+          <cpy-button icon>
             <cpy-icon style="color: white;">format_color_fill</cpy-icon>
           </cpy-button>
 
@@ -99,12 +101,12 @@
                 <p style="margin: 0; font-size: 0.75rem;">Front End Developer</p>
               </div>
             </div>
-            <div style="background-color: var(--cpy-bg-medium); padding: 12px; display: flex; align-items: center; gap: 1rem;">
+            <div style="background-color: var(--cpy-bg-medium); padding: 12px; display: flex; align-items: center; gap: 1rem; border-radius: 0 0 0.25rem 0.25rem;">
               <cpy-input-toggle id="darkModeCheckbox" size="small" label="Dark mode"></cpy-input-toggle>
               <cpy-input-select id="palette-picker" size="small" style="flex: 1;">
                 <cpy-input-select-option label="Emerald" value="emerald"></cpy-input-select-option>
-                <cpy-input-select-option label="Blue" value="blue"></cpy-input-select-option>
-                <cpy-input-select-option label="Purple" value="purple"></cpy-input-select-option>
+                <cpy-input-select-option label="Cyan" value="cyan"></cpy-input-select-option>
+                <cpy-input-select-option label="Violet" value="violet"></cpy-input-select-option>
               </cpy-input-select>
             </div>
           </div>
@@ -119,7 +121,7 @@
             <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo-alt.png" alt="Logo" width="60" style="opacity: 0.75;">
 
             <div style="flex: 1; font-size: 1.25rem;">
-              Canopy.
+              Canopy <span style="font-size: 0.75rem;">v0.3.2</span>
               <div style="font-size: 0.75rem;">
                 Alex Rayner ©2023
               </div>
